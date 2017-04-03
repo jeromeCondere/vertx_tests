@@ -1,5 +1,7 @@
 package com.vertxExample.app;
 
+import com.vertxExample.services.Service1;
+
 import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -19,7 +21,7 @@ public class App  {
             if (res.succeeded()) {
                 
                 final Vertx vertx = res.result();
-                //vertx.deployVerticle();
+                vertx.deployVerticle(Service1.class.getName());
             } else {
                 System.out.println("FAIL !!!");
             }
